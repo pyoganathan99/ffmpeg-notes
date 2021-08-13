@@ -1,2 +1,7 @@
-# ffmpeg-notes
-A simple collection of commands I keep forgetting when using FFMPEG
+# FFMPEG Commands
+
+### Crop Video
+
+```
+ffmpeg -i input -filter:v "crop=width:height:x:y" output
+```
