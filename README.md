@@ -24,3 +24,13 @@ Will 2x the video. Change '2' as required.
 ```
 ffmpeg -i video -filter:v "setpts=PTS/2" -an output
 ```
+
+### Add padding to a video (eg: black bars)
+
+```
+ffmpeg -i video -filter:v "pad=w:h:x:y" output
+```
+
+Where
+- w, h are dimensions of the output video
+- x, y coordinates of the original video
