@@ -34,3 +34,16 @@ ffmpeg -i video -filter:v "pad=w:h:x:y" output
 Where
 - w, h are dimensions of the output video
 - x, y coordinates of the original video
+
+### Overlay video over image
+
+```
+ffmpeg \
+    -i video \
+    -loop 1 -i image \
+    -filter_complex "[0][1]overlay=x:y:shortest=1" \
+    output
+```
+
+**Note:**
+- `[0]` and `[1]` are the inputs to the overlay filter, which correspond to first two inputs 
